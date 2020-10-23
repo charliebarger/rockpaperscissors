@@ -19,33 +19,37 @@
             let announceWinner = (`you win ${user} beats ${computer}`);
             let announceLoser = (`you loose ${computer} beats ${user}`);
             
-            if(computer == user){
-                return(`Tie! You both played ${user}. No Point!`);
-            }
-            else if(user == 'rock'){
-                if(computer == 'scissors'){
-                    return(announceWinner);
-                }
-                else {
-                    return(announceLoser);
-                }
-            }
-            else if(user == 'paper'){
-                if(computer == 'rock'){
-                    return(announceWinner);
-                }
-                else{
-                    return (announceLoser);
-                }
-            }
-            else if(user == 'scissors'){
-                if(computer == 'rock'){
-                    return(announceWinner);
-                }
-                else{
-                    return (announceLoser);
-                }
+            switch (user) {
+                case computer:
+                    return (`Tie! You both played ${user}. No Point!`);
+                    break;
 
+                case 'rock':
+                    if (computer == 'scissors') {
+                        return (announceWinner);
+                    }
+                    else {
+                        return (announceLoser);
+                    }
+                    break;
+                
+                case 'paper':
+                     if (computer == 'rock') {
+                        return (announceWinner);
+                    }
+                    else {
+                        return (announceLoser);
+                    }
+                    break;
+                case 'scissors':
+                    if (computer == 'rock') {
+                        return (announceWinner);
+                    }
+                    else {
+                        return (announceLoser);
+                    }
+                    break
+                
             }
             }
 
@@ -74,7 +78,7 @@
                             break;
                         }
                     }
-                    else if(winner === 'Tie'){
+                    else if(winner.search('Tie') > -1){
                         i--;
                     }
                     else {
