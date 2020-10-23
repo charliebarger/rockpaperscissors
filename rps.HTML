@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // The function computerplay randomly returns Rock, Paper, or Scissors
+        function computerPlay() {
+            const rps = ['rock', 'paper', 'scissors'];
+            const random = Math.floor(Math.random() * rps.length);
+            return(rps[random]);
+        }
+        // The function decidewinner takes two parameters user, and computer and returns an announcement that tells the user if they won or lost
+        function decideWinner(user, computer) {
+            user = user.toLowerCase()
+            let announceWinner = (`you win ${user} beats ${computer}`);
+            let announceLoser = (`you loose ${computer} beats ${user}`);
+            
+            if(computer == user){
+                return(`Tie! You both played ${user}. No Point!`);
+            }
+            else if(user == 'rock'){
+                if(computer == 'scissors'){
+                    return(announceWinner);
+                }
+                else {
+                    return(announceLoser);
+                }
+            }
+            else if(user == 'paper'){
+                if(computer == 'rock'){
+                    return(announceWinner);
+                }
+                else{
+                    return (announceLoser);
+                }
+            }
+            else if(user == 'scissors'){
+                if(computer == 'rock'){
+                    return(announceWinner);
+                }
+                else{
+                    return (announceLoser);
+                }
+
+            }
+            }
+
+            function roundAnnouncer(win, loss) {
+                console.log(`Score: ${win} win, ${loss} losses`);
+            }
+            
+            function game() {
+                let win = 0;
+                let loss = 0;
+                for (i = 0; i < 5; i++){
+                    let user = prompt('Rock, Paper, Scissors');
+                    let winner = decideWinner(user, computerPlay())
+                    ;
+                    console.log(winner);
+                    if (winner.search('win') > -1){
+                        win++;
+                        if (win === 3){
+                            roundAnnouncer(win, loss);
+                            break;
+                        }
+                    }
+                    else if(winner === 'Tie'){
+                        i--;
+                    }
+                    else {
+                        loss++;
+                        if (loss === 3) {
+                            roundAnnouncer(win, loss);
+                            break;
+                        }
+                    } 
+                    roundAnnouncer(win, loss);
+                }
+                if (win > loss){
+                    console.log('You Won!');
+                }
+                else {
+                    console.log('You Lost!');
+                }
+                }
+            
+                  
+                    
+                    
+                
+            
+            game()
+    </script>
+</body>
+</html>
