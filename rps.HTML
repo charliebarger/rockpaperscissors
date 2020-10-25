@@ -13,7 +13,8 @@
             const random = Math.floor(Math.random() * rps.length);
             return(rps[random]);
         }
-        // The function decidewinner takes two parameters user, and computer and returns an announcement that tells the user if they won or lost
+        /* The function decidewinner takes two parameters user, and computer and
+        returns an announcement that tells the user if they won or lost */
         function decideWinner(user, computer) {
             user = user.toLowerCase()
             let announceWinner = (`you win ${user} beats ${computer}`);
@@ -60,17 +61,24 @@
         }
 
             
-            // creates a best of 5 rock,paper, scissors game. Awarding the user a point for win point for a win and a loss point for a loss. The round is not counted if there is a tie. 
+            /* creates a best of 5 rock,paper, scissors game. Awarding the user
+             a point for win point for a win and a loss point for a loss. The
+             round is not counted if there is a tie. */ 
         function game() {
             let win = 0;
             let loss = 0;
             for (i = 0; i < 5; i++){
-                // uses a prompt to let the user input if they would liketo play rock paper scissors
+                /* uses a prompt to let the user input if they would liketo play
+                 rock paper scissors */
                 let user = prompt('Rock, Paper, Scissors');
-                // takes the result of that prompt and the functioncompterPlay, which returns a randomly generated value ofrock, paper, or scissors, and passes it to decideWinner
+                /* takes the result of that prompt and the functioncompterPlay,
+                 which returns a randomly generated value ofrock, paper, or 
+                 scissors, and passes it to decideWinner */
                 let winner = decideWinner(user, computerPlay())
                 ;
-                // if win/loss is in the string add a win/loss if there isa tie do not count that round in the 5 round total. Callroundannouncer at the end of each round
+                /* if win/loss is in the string add a win/loss if there isa tie 
+                do not count that round in the 5 round total. Callroundannouncer
+                at the end of each round */
                 console.log(winner);
                 if (winner.search('win') > -1){
                     win++;
