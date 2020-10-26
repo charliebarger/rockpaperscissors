@@ -17,10 +17,8 @@
         won or lost */
         function decideWinner(userChoice, computerChoice) {
             userChoice = userChoice.toLowerCase();
-            let winnerAnnouncement = (`you win ${userChoice} beats 
-            ${computerChoice}`);
-            let loserAnnouncement = (`you loose ${computerChoice} beats 
-            ${userChoice}`);
+            let winnerAnnouncement = (`you win ${userChoice} beats ${computerChoice}`);
+            let loserAnnouncement = (`you loose ${computerChoice} beats ${userChoice}`);
             
             switch (userChoice) {
                 case computerChoice:
@@ -61,19 +59,35 @@
         function announceScore(win, loss) {
             console.log(`Score: ${win} win, ${loss} losses`);
         }
+        /* Loop that makes sure a response of rock, paper, or scissors is given 
+        given before breaking*/
+        function confirmResponse(){
+            let choiceArray = ['rock', 'paper', 'scissors']
+            let userChoice;
+            while (true) {
+                userChoice = prompt('Rock, Paper, or Scissors')
+                userChoice = userChoice.toLowerCase();
+                if (choiceArray.indexOf(userChoice) > -1) {
+                    return(userChoice);
+                    break;
+                }
+                else {
+                    alert('Please enter "Rock", "Paper" or "Scissors"');
+                    }
+                        }
+                                }
+          /* creates a best of 5 rock, paper, scissors game. Awarding the user
+          a point for win point for a win and a loss point for a loss. The
+          round is not counted if there is a tie. */
 
-            
-        /* creates a best of 5 rock, paper, scissors game. Awarding the user
-        a point for win point for a win and a loss point for a loss. The
-        round is not counted if there is a tie. */ 
         function game() {
             let win = 0;
             let loss = 0;
+            alert('Lets Play Rock Paper Scissors! Best of 5!')
             for (i = 0; i < 5; i++){
-                let userChoice = prompt('Rock, Paper, Scissors');
+                userChoice = confirmResponse();
                 let roundWinner = decideWinner(userChoice,  
                 generateComputerChoice());
-                ;
                 /* if win/loss is in the string add a win/loss. If there isa tie 
                 do not count that round in the 5 round total. Call announceScore
                 at the end of each round */
