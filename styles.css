@@ -1,1 +1,58 @@
 /* styles */
+html,
+html * {
+  font-size: 16px;
+}
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  flex: 1;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+button {
+  margin: 2rem;
+  width: 100px;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.player {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-start;
+
+  flex: 1;
+}
+
+.announcements h2,
+h3 {
+  margin: 0px;
+  font-size: 2rem;
+  border-bottom: 1px black solid;
+}
+.announcements {
+  height: 40vh;
+  text-align: center;
+}
+
+.result {
+  flex: 1;
+  border: black solid 2px;
+  margin: 1rem;
+}
+
+.handSelections {
+  width: 100vw;
+  height: 10vh;
+  border: solid 1px red;
+}
