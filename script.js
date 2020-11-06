@@ -26,6 +26,7 @@
     let loss = 0;
     
     
+    
     buttons.forEach((button) => {
         button.addEventListener('click', function() {
             let robotPick = generateComputerChoice();
@@ -124,34 +125,11 @@
                 }
                 // userScoreNumber.textContent = win;
                 // userScoreBoard.appendChild(userScoreNumber);
+                 appendMultiple(userScoreBoard, counter = 0, userScoreNumber1, userScoreNumber2, win )
 
-                userScoreNumber1.textContent = win;
-                userScoreNumber2.textContent = win;
-                let winCounter = 0;
-
-                userScoreBoard.forEach((scoreboard) => {
-                    if (winCounter == 0){
-                        scoreboard.appendChild(userScoreNumber1);
-                    }
-                    else {
-                        scoreboard.appendChild(userScoreNumber2)
-                    }
-                    winCounter++
-                    });
-
-                compScoreNumber1.textContent = loss;
-                compScoreNumber2.textContent = loss;
-                let lossCounter = 0;
-
-                compScoreBoard.forEach((scoreboard) => {
-                    if (lossCounter == 0){
-                        scoreboard.appendChild(compScoreNumber1);
-                    }
-                    else {
-                        scoreboard.appendChild(compScoreNumber2)
-                    }
-                    lossCounter++
-                    });
+                 appendMultiple(compScoreBoard,counter = 0, compScoreNumber1, compScoreNumber2, loss)
+               
+                
 
                     if (win == 3){
                         body.appendChild(overlay);
@@ -162,7 +140,20 @@
                         winner.textContent = 'You Lost!'
                     }
                     overlay.appendChild(winner);
-            
+                } 
             // Best of 5 game has ended. Notify user if they won or lost
             
-    }
+            function appendMultiple(nodeList, counter, firstChild, secondChild, textContent) {  nodeList.forEach(        (node) => {
+                    if (counter == 0){
+                        firstChild.textContent = textContent;
+                        node.appendChild(firstChild);
+                    }
+                    else {
+                        secondChild.textContent = textContent;
+                        node.appendChild(secondChild)
+                    }
+                    counter++
+                    });
+            }
+
+    

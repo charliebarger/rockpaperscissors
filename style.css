@@ -7,9 +7,10 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: rgb(100, 100, 247);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-content: space-evenly;
   justify-content: space-evenly;
   position: relative;
 }
@@ -108,7 +109,7 @@ h4 {
   display: flex;
   width: 75vw;
   margin: 0px auto;
-  margin-top: 3rem;
+
   position: relative;
 }
 .userPlay,
@@ -132,8 +133,6 @@ h4 {
 }
 
 .buttons {
-  padding: 3rem 0px;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -196,9 +195,5 @@ h4 {
   .announcement {
     height: 250px;
     width: 60vw;
-  }
-
-  .buttons button {
-    width: 5rem;
   }
 }
