@@ -1,51 +1,77 @@
 
-    const displayChoice = document.querySelector('.youPlayed');
-    const result = document.createElement('p');
-
-    const compDisplay = document.querySelector('.compPlayed');
-    const compResult = document.createElement('p');
-    compResult.setAttribute('style', 'font-size: 2rem; color:red;');
-
-    let finalResult = document.querySelector('.result')
-    ;
-    let results = document.createElement('p')
-    results.setAttribute('style', 'font-size: 2rem; color:red; text-align: center;')
     
+    const compDisplay = document.querySelector('.compPlay');
+    const compResult = document.createElement('img');
+    
+    const userDisplay = document.querySelector('.userPlay');
+    const userResult = document.createElement('img');
+
+    const compScoreBoard = document.querySelectorAll('.two');
+    const compScoreNumber1 = document.createElement('span');
+    const compScoreNumber2 = document.createElement('span')
+
+    const userScoreBoard = document.querySelectorAll('.one');
+    const userScoreNumber1 = document.createElement('span');
+    const userScoreNumber2 = document.createElement('span');
+
+    const body = document.querySelector('body');
+    const overlay = document.createElement('div');
+    const winner = document. createElement('span')
+    winner.classList.add('youWon')
+    overlay.classList.add("divvy");
+
     const buttons = document.querySelectorAll('button');
+
+    let win = 0;
+    let loss = 0;
+    
     
     buttons.forEach((button) => {
         button.addEventListener('click', function() {
-            result.textContent = button.className;
-            result.setAttribute('style', 'font-size: 2rem; color:red;');
-            displayChoice.appendChild(result);
             let robotPick = generateComputerChoice();
-            compResult.textContent = robotPick;
-            compDisplay.appendChild(compResult)
+            if (button.className == 'Rock'){
+                userResult.src = "./Images/Rock_right.svg"
+            }
+            else if (button.classList == 'Paper'){
+                userResult.src = "./Images/Paper_right.svg"
+            }
+            else {
+                userResult.src = "./Images/Scissors_right.svg"
+            }
+            userDisplay.appendChild(userResult);
             game(button.className, robotPick);
         });
     });
-    
+
 
         // randomly returns Rock, Paper, or Scissors 
         function  generateComputerChoice() {
             const rps = ['Rock', 'Paper', 'Scissors'];
             const random = Math.floor(Math.random() * rps.length);
-            return(rps[random]);
+            choice = rps[random];
+            if (choice == 'Rock'){
+                compResult.src = './images/Rock_left.svg';
+            }
+            else if (choice == 'Paper') {
+                compResult.src = './images/Paper_left.svg';
+            }
+            else {
+                compResult.src = './images/Scissors_left.svg'
+            }
+            compDisplay.appendChild(compResult);
+            return(choice);
         }
         /* compares the users choice and computers choice and declares if the user
         won or lost */
         function decideWinner(userChoice, computerChoice) {
             userChoice = userChoice.toLowerCase();
             computerChoice =computerChoice.toLowerCase();
-            console.log(userChoice);
-            console.log(computerChoice);
-            let winnerAnnouncement = (`you win ${userChoice} beats ${computerChoice}`);
-            let loserAnnouncement = (`you loose ${computerChoice} beats ${userChoice}`);
+            let winnerAnnouncement = 'You Won'
+            let loserAnnouncement = 'You Lost';
             
             switch (userChoice) {
                 case computerChoice:
-                    return (`Tie! You both played ${userChoice}. No Point!`);
-                    break;
+                    return ('Tie')
 
                 case 'rock':
                     if (computerChoice == 'scissors') {
@@ -85,32 +111,58 @@
         given before breaking*/
 
         function game(choice, computerChoice) {
-            let win = 0;
-            let loss = 0;
-
             let roundWinner = decideWinner(choice, computerChoice);
-                /* if win/loss is in the string add a win/loss. If there isa tie 
-                do not count that round in the 5 rosund total. Call announceScore
-                at the end of each round */
-                if (roundWinner.search('win') > -1){
+
+                if (roundWinner == 'You Won'){
                     win++;
                 }
-                else if (roundWinner.search('loose') > -1) {
+                else if (roundWinner == 'You Lost') {
                     loss++;    
                     }
-            
+                else {
+                    console.log('poop')
+                }
+                // userScoreNumber.textContent = win;
+                // userScoreBoard.appendChild(userScoreNumber);
+
+                userScoreNumber1.textContent = win;
+                userScoreNumber2.textContent = win;
+                let winCounter = 0;
+
+                userScoreBoard.forEach((scoreboard) => {
+                    if (winCounter == 0){
+                        scoreboard.appendChild(userScoreNumber1);
+                    }
+                    else {
+                        scoreboard.appendChild(userScoreNumber2)
+                    }
+                    winCounter++
+                    });
+
+                compScoreNumber1.textContent = loss;
+                compScoreNumber2.textContent = loss;
+                let lossCounter = 0;
+
+                compScoreBoard.forEach((scoreboard) => {
+                    if (lossCounter == 0){
+                        scoreboard.appendChild(compScoreNumber1);
+                    }
+                    else {
+                        scoreboard.appendChild(compScoreNumber2)
+                    }
+                    lossCounter++
+                    });
+
+                    if (win == 3){
+                        body.appendChild(overlay);
+                        winner.textContent = 'You Won!'
+                    }
+                    else if (loss == 3){
+                        body.appendChild(overlay);
+                        winner.textContent = 'You Lost!'
+                    }
+                    overlay.appendChild(winner);
             
             // Best of 5 game has ended. Notify user if they won or lost
             
-            if (win > loss){
-                results.textContent = 'You Won!';
-    
-            }
-            else if (win < loss) {
-                results.textContent = 'You Lost!';
-            }
-            else{
-                results.textContent = 'Tie!';
-            }
-            finalResult.appendChild(results)
     }

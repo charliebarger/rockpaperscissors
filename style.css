@@ -7,8 +7,32 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: rgb(100, 100, 247);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+}
+.youWon {
+  font-size: 13vw;
+  color: rgb(0, 0, 0);
+}
+.divvy {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .tablet {
+  display: none;
+}
+.thirdLayer {
   display: none;
 }
 header {
@@ -62,6 +86,8 @@ header h2 {
   flex-direction: column;
   align-items: center;
   width: 4.25rem;
+  /* position: relative;
+  z-index: 2; */
 }
 
 .scoreboard h3,
@@ -83,6 +109,7 @@ h4 {
   width: 75vw;
   margin: 0px auto;
   margin-top: 3rem;
+  position: relative;
 }
 .userPlay,
 .compPlay {
@@ -122,7 +149,7 @@ h4 {
 }
 
 .image-wrapper {
-  height: 5vh;
+  height: 5vws;
   display: flex;
   align-content: center;
 }
@@ -161,9 +188,17 @@ h4 {
 
 @media all and (min-width: 800px) {
   header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  header h2 {
+    font-size: 2rem;
   }
   .announcement {
     height: 250px;
+    width: 60vw;
+  }
+
+  .buttons button {
+    width: 5rem;
   }
 }
