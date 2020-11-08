@@ -2,12 +2,13 @@ html,
 body,
 body * {
   box-sizing: border-box;
+  font-family: "Goldman", cursive;
 }
 body {
   margin: 0px;
-  padding: 0px;
+  padding: 1rem;
   background-color: rgb(100, 100, 247);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-content: space-evenly;
@@ -30,15 +31,11 @@ body {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.9);
 }
-.tablet {
-  display: none;
-}
-.thirdLayer {
-  display: none;
-}
+
 header {
   text-align: center;
 }
+
 header h1,
 h2 {
   font-family: "Satisfy", cursive;
@@ -47,12 +44,10 @@ h2 {
   margin: 0px;
 }
 header h1 {
-  margin: 1rem;
   margin-bottom: 0rem;
 }
 header h2 {
   font-size: 1.5rem;
-  align-self: flex-start;
 }
 .secondLayer {
   display: flex;
@@ -86,14 +81,14 @@ header h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 4.25rem;
+  width: 72px;
   /* position: relative;
   z-index: 2; */
 }
 
 .scoreboard h3,
 h4 {
-  font-size: 14px;
+  font-size: 12px;
   margin: 0px;
   background: yellow;
   width: 100%;
@@ -139,7 +134,10 @@ h4 {
 }
 
 .buttons button {
-  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 68px;
   padding: 0.5rem;
   background-color: whitesmoke;
   border: whitesmoke 1px solid;
@@ -148,9 +146,9 @@ h4 {
 }
 
 .image-wrapper {
-  height: 5vws;
   display: flex;
   align-content: center;
+  height: 2.5rem;
 }
 
 .image-wrapper img {
@@ -169,31 +167,66 @@ h4 {
   display: flex;
   justify-content: center;
 }
+.rounder {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.rounder p {
+  display: none;
+}
+p {
+  text-align: center;
+  color: red;
+
+  font-size: 1.5rem;
+
+  padding: 1rem;
+  margin: 0px auto;
+}
 @media all and (min-width: 600px) {
-  h2 {
-    font-size: 3rem;
+  .rounder {
+    flex: 6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  p {
+  }
+
+  .secondLayer {
+    width: 80%;
+    margin: 0px auto;
+  }
+  .rounder h2 {
+    justify-self: flex-start;
   }
   header h1 {
     margin-bottom: 1rem;
   }
-  .mobile {
-    display: none;
-  }
+
   .tablet {
     display: block;
+  }
+  .buttons {
+    width: 600px;
+    margin: 0px auto;
   }
 }
 
 @media all and (min-width: 800px) {
   header h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
-  header h2 {
-    font-size: 2rem;
+  .rounder h2 {
+    font-size: 1.5rem;
   }
   .announcement {
     height: 250px;
     width: 60vw;
+    margin: 2rem auto;
   }
 }

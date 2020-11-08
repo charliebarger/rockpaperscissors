@@ -20,6 +20,9 @@
     winner.classList.add('youWon')
     overlay.classList.add("divvy");
 
+    const startNum = document.querySelectorAll('.startnum');
+
+
     const buttons = document.querySelectorAll('button');
 
     let win = 0;
@@ -29,6 +32,10 @@
     
     buttons.forEach((button) => {
         button.addEventListener('click', function() {
+            startNum.forEach((num) => {
+            console.log(num);
+            num.remove();
+            })
             let robotPick = generateComputerChoice();
             if (button.className == 'Rock'){
                 userResult.src = "./Images/Rock_right.svg"
@@ -120,24 +127,17 @@
                 else if (roundWinner == 'You Lost') {
                     loss++;    
                     }
-                else {
-                    console.log('poop')
-                }
-                // userScoreNumber.textContent = win;
-                // userScoreBoard.appendChild(userScoreNumber);
-                 appendMultiple(userScoreBoard, counter = 0, userScoreNumber1, userScoreNumber2, win )
+                appendMultiple(userScoreBoard, counter = 0, userScoreNumber1, userScoreNumber2, win )
 
-                 appendMultiple(compScoreBoard,counter = 0, compScoreNumber1, compScoreNumber2, loss)
+                appendMultiple(compScoreBoard,counter = 0, compScoreNumber1, compScoreNumber2, loss)
                
-                
-
-                    if (win == 3){
-                        body.appendChild(overlay);
-                        winner.textContent = 'You Won!'
+                if (win == 3){
+                    body.appendChild(overlay);
+                    winner.textContent = 'You Won!'
                     }
-                    else if (loss == 3){
-                        body.appendChild(overlay);
-                        winner.textContent = 'You Lost!'
+                else if (loss == 3){
+                    body.appendChild(overlay);
+                    winner.textContent = 'You Lost!'
                     }
                     overlay.appendChild(winner);
                 } 
