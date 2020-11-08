@@ -56,13 +56,13 @@
             const random = Math.floor(Math.random() * rps.length);
             choice = rps[random];
             if (choice == 'Rock'){
-                compResult.src = './images/Rock_left.svg';
+                compResult.src = './Images/Rock_left.svg';
             }
             else if (choice == 'Paper') {
-                compResult.src = './images/Paper_left.svg';
+                compResult.src = './Images/Paper_left.svg';
             }
             else {
-                compResult.src = './images/Scissors_left.svg'
+                compResult.src = './Images/Scissors_left.svg'
             }
             compDisplay.appendChild(compResult);
             return(choice);
