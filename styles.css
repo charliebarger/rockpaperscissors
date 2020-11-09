@@ -1,6 +1,4 @@
-html,
-body,
-body * {
+* {
   box-sizing: border-box;
   font-family: "Goldman", cursive;
 }
@@ -48,15 +46,17 @@ h2 {
   color: white;
   margin: 0px;
 }
-header h1 {
-  margin-bottom: 0rem;
-}
+
 header h2 {
   font-size: 1.5rem;
 }
+header h1 {
+  margin-bottom: 1rem;
+}
 .secondLayer {
+  max-width: 900px;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .numbers {
@@ -81,6 +81,7 @@ header h2 {
 .two {
   background: red;
 }
+
 .scoreboard {
   padding: 0rem;
   display: flex;
@@ -133,6 +134,7 @@ h4 {
 }
 
 .buttons {
+  margin-top: 0.75rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -145,7 +147,7 @@ h4 {
   width: 68px;
   padding: 0.5rem;
   background-color: whitesmoke;
-  border: whitesmoke 1px solid;
+  bofrder: whitesmoke 1px solid;
   border-radius: 10px;
   box-shadow: 5px 5px 15px 5px #000000;
 }
@@ -185,9 +187,7 @@ button:focus {
 p {
   text-align: center;
   color: red;
-
   font-size: 1rem;
-
   padding: 1rem 0.25rem;
   margin: 0px auto;
 }
@@ -199,27 +199,14 @@ p {
 }
 
 @media all and (min-width: 600px) {
-  .rounder {
-    flex: 6;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
   .secondLayer {
     margin: 0px auto;
   }
-  .rounder h2 {
-    justify-self: flex-start;
-  }
+
   header h1 {
     margin-bottom: 1rem;
   }
 
-  .tablet {
-    display: block;
-  }
   .buttons {
     width: 600px;
     margin: 0px auto;
