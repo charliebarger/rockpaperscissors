@@ -123,7 +123,6 @@
             }
         }
 
-        /* */
     
         function game(choice, computerChoice) {
             let roundWinner = decideWinner(choice, computerChoice);
