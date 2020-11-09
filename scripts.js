@@ -37,7 +37,6 @@
     let loss = 0;
     
     //on each button click remove initial 0s and then call functions
-
     buttons.forEach((button) => {
         button.addEventListener('click', function() {
             startNum.forEach((num) => {
@@ -49,7 +48,7 @@
         });
     });
 
-    //append SVG to user play field depnding on what is selected
+     //append SVG to user play field depnding on what is selected
      function displayUserChoice(choice){
             if (choice == 'Rock'){
                 userResult.src = "./Images/Rock_right.svg";
@@ -65,8 +64,8 @@
             }
             userDisplay.appendChild(userResult);
     }
-    /*pick a random choice, append the coresponding svg to playfield and return the selected choice */
-
+        
+        /*pick a random choice, append the coresponding svg to playfield and return the selected choice */
         function  generateComputerChoice() {
             const rps = ['Rock', 'Paper', 'Scissors'];
             const random = Math.floor(Math.random() * rps.length);
@@ -87,8 +86,7 @@
             return(choice);
         }
     
-    //decide who won and return an announcement 
-
+        //decide who won and return an announcement 
         function decideWinner(userChoice, computerChoice) {
             let winnerAnnouncement = (`You Win! ${userChoice} beats ${computerChoice}!`);
             let loserAnnouncement = (`You Loose ${computerChoice} beats ${userChoice}!`);
@@ -123,7 +121,6 @@
             }
         }
 
-    
         function game(choice, computerChoice) {
             let roundWinner = decideWinner(choice, computerChoice);
 
@@ -150,7 +147,6 @@
             } }
 
         /*append overlay with a play again button that restors the game to its original settings and then removes the overlay*/
-
         function restart(result){
             body.appendChild(overlay);
             if (result == 'win'){
