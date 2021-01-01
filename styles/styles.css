@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  font-family: "Goldman", cursive;
+}
+body {
+  margin: 0px;
+  padding: 1rem;
+  background-color: rgb(100, 100, 247);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  position: relative;
+}
+.youWon {
+  font-size: 13vw;
+  color: rgb(0, 0, 0);
+}
+.divvy {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.divvy button {
+  padding: 0.75rem;
+  margin-top: 2rem;
+}
+
+header {
+  text-align: center;
+}
+
+header h1,
+h2 {
+  font-family: "Satisfy", cursive;
+  font-size: 2.5rem;
+  color: white;
+  margin: 0px;
+}
+
+header h2 {
+  font-size: 1.5rem;
+}
+header h1 {
+  margin-bottom: 1rem;
+}
+.secondLayer {
+  max-width: 900px;
+  display: flex;
+  margin-top: 0rem;
+}
+
+.numbers {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 1.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.numbers:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.one {
+  background: limegreen;
+}
+.two {
+  background: red;
+}
+
+.scoreboard {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  /* position: relative;
+  z-index: 2; */
+}
+
+.scoreboard h3,
+h4 {
+  font-size: 12px;
+  margin: 0px;
+  background: yellow;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  box-shadow: 5px 4px 6px -3px #000000;
+
+  border-radius: 5px;
+}
+
+.announcement {
+  height: 200px;
+  display: flex;
+  width: 75vw;
+  margin: 0px auto;
+
+  position: relative;
+}
+.userPlay,
+.compPlay {
+  padding: 1rem;
+  background-color: rgb(91, 91, 233);
+  height: 100%;
+  width: 49%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userPlay {
+  width: 51%;
+  border-right: dashed 2px yellow;
+}
+.userPlay img,
+.compPlay img {
+  width: 90%;
+  height: 100%;
+}
+
+.buttons {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 68px;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  bofrder: whitesmoke 1px solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+button:focus {
+  outline: 0;
+  background: rgb(176, 165, 165);
+}
+.image-wrapper {
+  display: flex;
+  align-content: center;
+  height: 2.5rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+.buttons span {
+  display: inline-block;
+  margin: 0.5rem 0rem 0.25rem 0rem;
+  font-size: 0.75rem;
+}
+
+.score-wrapper {
+  flex-basis: 100px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.rounder {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+p {
+  text-align: center;
+  color: red;
+  font-size: 1rem;
+  padding: 1rem 0.25rem;
+  margin: 0px auto;
+}
+
+@media all and (min-width: 500px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .secondLayer {
+    margin: 0px auto;
+  }
+
+  header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    width: 600px;
+    margin: 0px auto;
+  }
+}
+
+@media all and (min-width: 800px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  .rounder h2 {
+    font-size: 1.5rem;
+  }
+  .announcement {
+    height: 250px;
+    width: 60vw;
+    margin: 2rem auto;
+  }
+}
